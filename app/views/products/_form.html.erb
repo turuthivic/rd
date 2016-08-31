@@ -20,12 +20,15 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :upload %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => 'select the category') %>
   </div>
   <div class="actions">
     <%= f.submit %>
