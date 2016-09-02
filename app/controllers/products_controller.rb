@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :authenticate_admin!, except: [:create, :edit, :update, :destroy]
 
+  
   # GET /products
   # GET /products.json
   def index

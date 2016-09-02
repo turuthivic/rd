@@ -12,7 +12,8 @@
 <h3>We have the following <%= @category.name %> available</h3>
 <% Product.where(category_id: @category.id).each do |p| %>
 	<li><%= p.title %></li>
-	<li><%= p.image %></li>
+	<li><%= link_to image_tag(p.image.url, class: 'media-object'), @product_path# target: '_blank'
+	 %> </li>
 	<li><%= p.description%></li>
 	<li><%= p.price %></li>
 <% end -%>
