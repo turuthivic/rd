@@ -5,10 +5,8 @@
   <%= @product.title %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<p>     <%= image_tag(@product.image.url(:thumb)) %> </p> <p>
+<strong>Description:</strong>   <%= @product.description %> </p>
 
 <p>
   <strong>Category:</strong>

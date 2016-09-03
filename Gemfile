@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem "paperclip"
 #devise used for authentication 
 gem 'devise'
+# bootstrap and autoprefixer-rails gems for css 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

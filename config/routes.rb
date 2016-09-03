@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subcategories
   devise_for :admins
   devise_for :users
   resources :categories

@@ -30,6 +30,10 @@
   <div class="field">
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => 'select the category') %>
   </div>
+  <div class="field">
+    <%= check_box_tag(:subcategory_id)%>
+    <%= label_tag @subcategories %>
+  <!-- <div class="field"> -->
   <div class="actions">
     <%= f.submit %>
   </div>

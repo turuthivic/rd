@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :authenticate_admin!, except: [:create, :edit, :update, :destroy]
+  skip_before_filter :authenticate_admin!, except: [:new, :create, :edit, :update, :destroy]
 
   
   # GET /products
@@ -18,11 +18,13 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new 
     @categories = Category.all.map { |c| [c.name, c.id]}
+    # @subcategories = Subcategory.all.map { |s| [s.title, s.id]  }
   end
 
   # GET /products/1/edit
   def edit
     @categories = Category.all.map { |c| [c.name,c.id]}
+    @subcategories = Subcategory.all.map { |s| [s.title, s.id]  }
   end
 
   # POST /products
@@ -30,6 +32,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
+    @product.subcategory_id = params[:subcategory_id]
     
     respond_to do |format|
       if @product.save
@@ -76,4 +79,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :category_id, :price, :image)
     end
+    
 end
