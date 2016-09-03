@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,7 +13,7 @@
 <h3>We have the following <%= @category.name %> available</h3>
 <% Product.where(category_id: @category.id).each do |p| %>
 	<li><%= p.title %></li>
-	<li><%= link_to image_tag(p.image.url), product_path(Product.id)# target: '_blank'
+	<li><%= link_to image_tag(p.image.url(:thumb)), product_path(p.id)# target: '_blank'
 	 %> </li>
 	<li><%= p.description%></li>
 	<li><%= p.price %></li>
@@ -21,3 +22,4 @@
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
 <% end -%>
+</div>

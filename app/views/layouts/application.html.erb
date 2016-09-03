@@ -9,9 +9,12 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= render :partial => 'subcategories/sub' %>
-
+<div class="container">
+<div class="row">
+<div class="col-md-4">
 <%= yield %>
-
+</div>
+</div>
+</div>
 </body>
 </html>

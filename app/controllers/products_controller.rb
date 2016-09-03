@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new 
     @categories = Category.all.map { |c| [c.name, c.id]}
-    # @subcategories = Subcategory.all.map { |s| [s.title, s.id]  }
+    @subcategories = Subcategory.all.map { |s| [s.title, s.id]  }
   end
 
   # GET /products/1/edit

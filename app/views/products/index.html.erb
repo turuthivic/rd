@@ -1,5 +1,4 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<%= render :partial => 'subcategories/sub' %>
 <% if admin_signed_in? %>
 <p><%= link_to "logout", destroy_user_session_path, :method => :delete %></p>
 <% end -%>
