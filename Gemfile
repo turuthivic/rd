@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+ ruby '2.1.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -27,6 +28,8 @@ gem 'devise'
 # bootstrap and autoprefixer-rails gems for css 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+# using puma server
+gem 'puma'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -50,5 +53,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  group :production do
+  	gem 'rails_12factor'
+  end
 end
 
