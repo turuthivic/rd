@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'categories/:categories:id',  to: 'categories#show', as: :category
   resources :subcategories
   devise_for :admins
   devise_for :users

@@ -7,11 +7,14 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    # @subcategory = Subcategory.find_by id: params['subcategory.id']
+    @category = Category.where(@category_id)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @category = Category.where(@category_id)
   end
 
   # GET /products/new
@@ -23,6 +26,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @category = Category.where(@category_id)
     @categories = Category.all.map { |c| [c.name,c.id]}
     @subcategories = Subcategory.all.map { |s| [s.title, s.id]  }
   end
