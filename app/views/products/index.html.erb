@@ -3,42 +3,21 @@
 <p><%= link_to "logout", destroy_user_session_path, :method => :delete %></p>
 <% end -%>
 <h1>Listing Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <div class="col-md-4">
-  <% prod = Product.find_by_id(6) %>
-    <%= image_tag(prod.image.url) %>
-  </div>
-
-  <tbody>
- 
+ <div class="row">
     <% @products.each do |product| %>
-        <tr>
           <div class="col-md-4">
-            <td><%= product.title %></td>
-            <td><%= product.description %></td>
-            <td><%= product.price %></td>
-            <td><%= link_to 'view similar items', category_path(product.category_id) %></td>
-            <td><%= link_to image_tag(product.image.url(:thumb)), product %></td>
+            <p><%= link_to image_tag(product.image.url(:medium)), product %></p>
             <% if admin_signed_in? %>
-            <td><%= link_to 'Edit', edit_product_path(product) %></td>
-            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <p><%= product.title %></p>
+            <p><%= product.description %></p>
+            <p><%= product.price %></p>
+            <p><%= link_to 'view similar items', category_path(product.category_id) %></p>
+            <p><%= link_to 'Edit', edit_product_path(product) %></p>
+            <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end -%>
             </div>
-        </tr>
     <% end %>
     </div>
-  </tbody>
-</table>
 
 <br>
 <% if admin_signed_in? %>
