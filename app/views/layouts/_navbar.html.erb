@@ -1,1 +1,86 @@
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="/"><i class="fa fa-phone"></i> +254 79 91 88 821</a></li>
+								<li><a href="/"><i class="fa fa-envelope"></i> me@me.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="/"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="/"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="/"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="/"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="/"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<%= link_to image_tag('logo.png',size: '40x50'), root_path %>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<% if user_signed_in? || admin_signed_in? %>
+								<li><%= link_to "Account", root_path, class: "fa fa-user" %></li>
+								<li><%= link_to "logout", destroy_user_session_path, method: :delete %><i class="fa fa-lock"></i>
+								<% else %>
+								<li><%= link_to"login", new_user_session_path %><i class="fa fa-lock"></i></li>
+								<% end -%>							
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><%= link_to "Home", root_path, class: "active" %></li>
+								<li><%= link_to "Laptops", Category.first %></li>
+								<li><%= link_to "Desktops", Category.second %></li>
+								<li><%= link_to "Accessories", Category.third %></li>
+								<li><%= link_to "CCTV", Category.fourth %></li>
+								<li><a href="404.html">404</a></li>
+								<li><a href="contact-us.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
 
+
+
+		

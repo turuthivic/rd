@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   skip_before_filter :authenticate_admin!, except: [:new, :create, :edit, :update, :destroy]
+  layout "products"
 
   
   # GET /products
