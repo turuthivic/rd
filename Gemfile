@@ -28,6 +28,8 @@ gem 'devise'
 # bootstrap and autoprefixer-rails gems for css 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+# progress line for when page is loading
+gem 'nprogress-rails'
 # using puma server
 gem 'puma'
 # bundle exec rake doc:rails generates the API under doc/api.

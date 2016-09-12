@@ -1,25 +1,39 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-<h3>We have the following <%= @category.name %> available</h3>
-<% Product.where(category_id: @category.id).each do |p| %>
-	<li><%= p.title %></li>
-	<li><%= link_to image_tag(p.image.url(:thumb)), product_path(p.id)# target: '_blank'
-	 %> </li>
-	<li><%= p.description%></li>
-	<li><%= p.price %></li>
-<% end -%>
-<% if admin_signed_in? %>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
-<% end -%>
-</div>
+<%=  render 'layouts/sidebar' %>
+<section>
+        <div class="container">
+            <div class="row">                
+                <div class="col-sm-9 padding-right">
+                    <% if admin_signed_in? %>
+                        <h2><%= link_to 'New Category', new_category_path, class: "text-center"%></h2>
+                    <% end -%>
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center"><%= @category.name %></h2>                       
+                             <div class="row">
+								<p>
+								  <strong>Description:</strong>
+								  <%= @category.description %>
+								</p>
+								<% Product.where(category_id: @category.id).each do |p| %>
+									<div class="col-md-4">
+	                                    <div class="product-image-wrapper">
+	                                        <div class="single-products">
+		                                        <div class="productinfo text-center">
+													<li><%= link_to image_tag(p.image.url, size: "200x200"), product_path(p.id)%></li>
+													<li><%= p.description%></li>
+													<li><%= p.price %></li>
+													<div class="choose">
+                                                    <ul class="nav nav-pills nav-justified">
+	                                                    <% unless admin_signed_in? %>
+	                                                        <li><a href="/"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+	                                                    <% end -%>
+		                                                <% if admin_signed_in? %>
+			                                                <li><%= link_to 'Edit', edit_category_path(category) %></li>
+			                                                <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		                                                <% end -%>
+                                                    </ul>
+                                                </div>
+                                               </div>
+                                              </div>
+                                             </div>
+											</div>
+								<% end -%>

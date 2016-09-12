@@ -1,2 +1,7 @@
 @import "bootstrap-sprockets";
-@import "bootstrap"
+@import "bootstrap";
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+$nprogress-color: #f1f1f1;
+$nprogress-height: 10px;
+$nprogress-zindex: 10100;

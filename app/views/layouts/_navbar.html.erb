@@ -37,7 +37,7 @@
 							<ul class="nav navbar-nav">
 								<% if user_signed_in? || admin_signed_in? %>
 								<li><%= link_to "Account", root_path, class: "fa fa-user" %></li>
-								<li><%= link_to "logout", destroy_user_session_path, method: :delete %><i class="fa fa-lock"></i>
+								<li><%= link_to "logout", destroy_user_session_path, method: :delete %><i class="fa fa-lock"></i></li>
 								<% else %>
 								<li><%= link_to"login", new_user_session_path %><i class="fa fa-lock"></i></li>
 								<% end -%>							
@@ -80,6 +80,7 @@
 				</div>
 			</div>
 		</div><!--/header-bottom-->
+	</header>
 
 
 

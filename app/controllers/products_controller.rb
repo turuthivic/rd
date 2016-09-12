@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   skip_before_filter :authenticate_admin!, except: [:new, :create, :edit, :update, :destroy]
-  layout "products"
+  layout "products", except: [:show]
 
   
   # GET /products
@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @category = Category.where(@category_id)
+     @produ = params[:category_id]
+    @prod = Product.where(@category_id)
   end
 
   # GET /products/new
