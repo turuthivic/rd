@@ -39,7 +39,7 @@
 								<li><%= link_to "Account", root_path, class: "fa fa-user" %></li>
 								<li><%= link_to "logout", destroy_user_session_path, method: :delete %><i class="fa fa-lock"></i></li>
 								<% else %>
-								<li><%= link_to"login", new_user_session_path %><i class="fa fa-lock"></i></li>
+								<li><%= link_to '<i class="fa fa-lock"></i>login'.html_safe, new_user_session_path %></li>
 								<% end -%>							
 							</ul>
 						</div>
@@ -67,8 +67,7 @@
 								<li><%= link_to "Desktops", Category.second %></li>
 								<li><%= link_to "Accessories", Category.third %></li>
 								<li><%= link_to "CCTV", Category.fourth %></li>
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="/">Contact</a></li>
 							</ul>
 						</div>
 					</div>
