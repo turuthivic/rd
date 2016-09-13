@@ -15,8 +15,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-     @produ = params[:category_id]
     @prod = Product.where(@category_id)
+    @category = Category.where(@category_id)
   end
 
   # GET /products/new
