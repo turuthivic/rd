@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 /public/system/products/images/*
+Procfile
+.env
