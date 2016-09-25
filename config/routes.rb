@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'contact_us' => 'contacts#new', as:'contacts'
+
   # get 'categories/:categories:id',  to: 'categories#show', as: :category
   resources :subcategories
   devise_for :admins
   devise_for :users
   resources :categories
   resources :products
+  resources 'contacts', only:[:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

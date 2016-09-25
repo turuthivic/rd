@@ -32,6 +32,12 @@ gem 'autoprefixer-rails'
 gem 'nprogress-rails'
 # using puma server
 gem 'puma'
+# calendar management of events
+# gem "simple_calendar"
+# mailform for contact 
+gem "mail_form"
+# simpleform for forms
+gem "simple_form"
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
