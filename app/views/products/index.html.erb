@@ -1,16 +1,18 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<%= render 'shared/carousel' %>
-<%= render 'shared/sidebar' %>
+<%= render '/shared/carousel' %>
         <div class="container">
-            <div class="row">                
-                <div class="col-sm-9 padding-right">
+            <div class="row"> 
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <%= render '/shared/sidebar' %>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12 padding-right">
                     <% if admin_signed_in? %>
                         <h2><%= link_to 'New Product', new_product_path, class: "text-center"%></h2>
                     <% end -%>
                     <div class="features_items"><!--features_items-->
                         <h2 class="title text-center">Featured Items</h2>                       
                                 <% @products.each do |product| %>
-                                  <div class="col-md-4">
+                                  <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <p><%= link_to image_tag(product.image.url, size: "300x200", class: "zoom-img"), product %></p>

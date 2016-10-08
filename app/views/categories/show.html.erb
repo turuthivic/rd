@@ -1,8 +1,10 @@
-<%=  render 'shared/sidebar' %>
 <section>
         <div class="container">
-            <div class="row">                
-                <div class="col-sm-9 padding-right">
+            <div class="row">   
+            	<div class="col-sm-3">             
+	            	<%= render '/shared/sidebar' %>
+	            </div>
+                <div class="col-md-9 col-sm-12 col-xs-12 padding-right">
                     <% if admin_signed_in? %>
                         <h2><%= link_to 'New Category', new_category_path, class: "text-center"%></h2>
                     <% end -%>
@@ -12,7 +14,7 @@
 								  <%= @category.description %>
 								</p>
 								<% Product.where(category_id: @category.id).each do |p| %>
-									<div class="col-md-4">
+									<div class="col-md-4 col-sm-6 col-xs-12">
 	                                    <div class="product-image-wrapper">
 	                                        <div class="single-products">
 													<p><%= link_to image_tag(p.image.url, size: "300x200", class: "zoom-img"), product_path(p.id)%></p>

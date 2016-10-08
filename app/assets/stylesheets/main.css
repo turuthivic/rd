@@ -514,7 +514,7 @@ h2.title:before{
 }
 
 .category-products .panel {
-	background-color: #FFFFFF;
+	background-color: none;
 	border: 0px;
 	border-radius: 0px;
 	box-shadow:none;
@@ -522,7 +522,7 @@ h2.title:before{
 }
 
 .category-products .panel-default .panel-heading {
-  background-color: #FFFFFF;
+  background-color: none;
   border: 0 none;
   color: #FFFFFF;
   padding: 5px 20px;
@@ -534,6 +534,9 @@ h2.title:before{
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
+}
+.sidebar-title h2{
+  margin-bottom: 1em;
 }
 
 .panel-group .panel-heading + .panel-collapse .panel-body {
@@ -776,7 +779,7 @@ h2.title {
 }
 
 .choose ul li a {
-  color: #B3AFA8;
+  color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   padding-left: 0;
@@ -789,7 +792,7 @@ h2.title {
 
 .choose ul li a:hover{
 	background:none;
-	color:#FE980F;
+	color:#ff6666;
 }
 
 .category-tab {
@@ -885,14 +888,18 @@ h2.title {
   border-bottom: 1px solid #4CB1CA;
 }
 .address p{
-  color: #fff !important;
+  color: #000 !important;
 }
 contact p{
-  color: #fff;
+  color: #000;
 }
 .footer-bottom{
   background-color: #F0F0E9;
 }
+.footer-bottom{
+  padding: 0 8em;
+}
 .contact{
-  padding: 0 !important;
+  padding: 0 0 0 6em !important;
+  /*padding-left: 6em;*/
 }
