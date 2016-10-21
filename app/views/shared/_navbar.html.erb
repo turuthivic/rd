@@ -4,20 +4,17 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="/"><i class="fa fa-phone"></i> +254 79 91 88 821</a></li>
-								<li><a href="/"><i class="fa fa-envelope"></i> me@me.com</a></li>
+							<ul class="nav navbar-nav">
+								<li><a href="/"><i class="glyphicon glyphicon-phone-alt"></i> +254 79 91 88 821</a></li>
+								<li><a href="/"><i class="glyphicon glyphicon-envelope"></i> me@me.com</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<div class="social-icons pull-right">
+						<div class="contactinfo pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="/"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="/"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="/"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="/"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="/"><i class="fa fa-google-plus"></i></a></li>
+							<li><%= link_to '<i class="glyphicon glyphicon-phone"></i>Contact Us'.html_safe, contacts_path %></li>
+							<li><%= link_to '<i class="glyphicon glyphicon-info-sign"></i>About Us'.html_safe, root_path %></li>
 							</ul>
 						</div>
 					</div>
@@ -71,10 +68,10 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<% if user_signed_in? || admin_signed_in? %>
-								<li><%= link_to "Account", root_path, class: "fa fa-user" %></li>
-								<li><%= link_to "logout", destroy_user_session_path, method: :delete %><i class="fa fa-lock"></i></li>
+								<li><%= link_to '<i class="glyphicon glyphicon-user"></i>Account'.html_safe, root_path %> </li>
+								<li><%= link_to  '<i class ="glyphicon glyphicon-log-out"></i>logout'.html_safe, destroy_user_session_path, method: :delete %></li>
 								<% else %>
-								<li><%= link_to '<i class="fa fa-lock"></i>login'.html_safe, new_user_session_path %></li>
+								<li><%= link_to '<i class="glyphicon glyphicon-log-in"></i>login'.html_safe, new_user_session_path %></li>
 								<% end -%>							
 							</ul>
 						</div>
@@ -102,7 +99,7 @@
 								<li><%= link_to "Desktops", Category.second %></li>
 								<li><%= link_to "Accessories", Category.third %></li>
 								<li><%= link_to "CCTV", Category.fourth %></li>
-								<li><a href="/">Contact</a></li>
+								<li><%= link_to "Contact", contacts_path %></li>
 							</ul>
 						</div>
 					</div>

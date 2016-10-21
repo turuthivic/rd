@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
-  match '/contacts',     to: 'contacts#new',             via: 'get'
+  match '/contacts', to: 'contacts#new', via: 'get'
 resources "contacts", only: [:new, :create]
-  # get 'contact_us' => 'contacts#new', as:'contacts'
-  # match 'contact_us',to: 'contacts#new', via: 'get'
-
-  # get 'categories/:categories:id',  to: 'categories#show', as: :category
   resources :subcategories
   devise_for :admins
   devise_for :users
   resources :categories
   resources :products
-  # resources 'contacts', only:[:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
