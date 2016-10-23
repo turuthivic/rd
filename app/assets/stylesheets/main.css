@@ -12,6 +12,27 @@ body {
   font-weight:400px;
 }
 /*personal customization starts here*/
+/*sidebar configuration*/
+.parent-expanded {
+  
+}
+.parent-collapsed {
+  display: none;
+}
+
+.collapsed {
+  .parent-expanded {
+    display: none;
+  }
+  
+  .parent-collapsed {
+    display: inline-block;
+  }
+} 
+/*end sidebar configuration*/
+.search_box input{
+  border-radius: 20px;  
+}
 /*product page index product starts here */
 .product-image-wrapper{
   border:1px solid #F7F7F5;
@@ -279,21 +300,21 @@ a#scrollUp i{
 	color:#ff0000;
 }
 
-.search_box input {
+/*.search_box input {
   background: #F0F0E9;
-  border: medium none;
+  border: medium blue;
   color: #000;
   font-family: 'roboto';
   font-size: 12px;
   font-weight: 300;
-  height: 35px;
+  height: 45px;
   outline: medium none;
   padding-left: 10px;
   width: 155px;
   background-image: url(../images/home/searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
-}
+}*/
 
 
 /*  Dropdown menu*/

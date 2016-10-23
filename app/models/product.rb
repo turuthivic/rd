@@ -6,5 +6,8 @@ class Product < ActiveRecord::Base
   	# validates :price, presence: true
   	validates :category, presence:true
   	# validates  :image, presence: true
+  	def self.search(search)
+  		where('title || description LIKE? ', "%#{search}%")
+  	end
 
 end
