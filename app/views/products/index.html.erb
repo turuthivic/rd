@@ -7,7 +7,8 @@
                 </div>
                 <div class="col-md-9 col-sm-12 col-xs-12 padding-right">
                     <% if admin_signed_in? %>
-                        <h2><%= link_to 'New Product', new_product_path, class: "text-center"%></h2>
+                        <h2><%= link_to 'New Product', new_product_path, class: "pull-left"%></h2> </br>   
+                        <h2><%= link_to 'Categories', :controller => 'categories', class: "pull-right" %> </h2>
                     <% end -%>
                     <div class="features_items"><!--features_items-->
                         <h2 class="title text-center">Featured Items</h2>                  

@@ -2,19 +2,53 @@
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-9">
 						<div class="contactinfo">
 							<ul class="nav navbar-nav">
 								<li><a href="/"><i class="glyphicon glyphicon-phone-alt"></i> +254 79 91 88 821</a></li>
 								<li><a href="/"><i class="glyphicon glyphicon-envelope"></i> me@me.com</a></li>
 							</ul>
+							<div class="offer pull-left nav navbar-nav">
+						<script>
+						    $(function(){
+
+						        $("#typed").typed({
+						            // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+						            stringsElement: $('#typed-strings'),
+						            typeSpeed: 30,
+						            backDelay: 1200,
+						            loop: true,
+						            contentType: 'html', // or text
+						            // defaults to false for infinite loop
+						            loopCount: false,
+						            callback: function(){ foo(); },
+						            resetCallback: function() { newTyped(); }
+						        });
+
+						        $(".reset").click(function(){
+						            $("#typed").typed('reset');
+						        });
+
+						    });
+
+						    function newTyped(){ /* A new typed object */ }
+
+						    function foo(){ console.log("Callback"); }
+
+					    </script>
+							<div id="typed-strings">
+					            <p>Get a free laptop bag on every laptop purchased worth Ksh30,000 and above</p>
+					            <p>One year warranty for every commodity purchased</p>
+					            <p>Visit our shop for these and more offers!!!</p>
+				            </div><!--typed-string-->
+				            <span id="typed" style="white-space:pre;"></span>
+				        </div>
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-1.5">
 						<div class="contactinfo pull-right">
 							<ul class="nav navbar-nav">
 							<li><%= link_to '<i class="glyphicon glyphicon-phone"></i>Contact Us'.html_safe, contacts_path %></li>
-							<li><%= link_to '<i class="glyphicon glyphicon-info-sign"></i>About Us'.html_safe, root_path %></li>
 							</ul>
 						</div>
 					</div>
@@ -24,66 +58,12 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8">
+					<div class="col-md-2 col-sm-8">
 						<div class="logo pull-left">
-							<%= link_to image_tag('comlinks.png',size: '160x100'), root_path %>
-						</div>
-						<div class="offer pull-left">
-						<script>
-    $(function(){
-
-        $("#typed").typed({
-            // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
-            stringsElement: $('#typed-strings'),
-            typeSpeed: 30,
-            backDelay: 1200,
-            loop: true,
-            contentType: 'html', // or text
-            // defaults to false for infinite loop
-            loopCount: false,
-            callback: function(){ foo(); },
-            resetCallback: function() { newTyped(); }
-        });
-
-        $(".reset").click(function(){
-            $("#typed").typed('reset');
-        });
-
-    });
-
-    function newTyped(){ /* A new typed object */ }
-
-    function foo(){ console.log("Callback"); }
-
-    </script>
-							<div id="typed-strings">
-					            <p>Get a free laptop bag on every laptop purchased worth Ksh30,000 and above</p>
-					            <p>One year warranty for every commodity purchased</p>
-					            <p>Visit our shop for these and more offers!!!</p>
-				            </div><!--typed-string-->
-				            <span id="typed" style="white-space:pre;"></span>
-				        </div>
-					</div>
-					<div class="col-sm-4">
-						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-								<% if user_signed_in? || admin_signed_in? %>
-								<li><%= link_to '<i class="glyphicon glyphicon-user"></i>Account'.html_safe, root_path %> </li>
-								<li><%= link_to  '<i class ="glyphicon glyphicon-log-out"></i>logout'.html_safe, destroy_user_session_path, method: :delete %></li>
-								<% else %>
-								<li><%= link_to '<i class="glyphicon glyphicon-log-in"></i>login'.html_safe, new_user_session_path %></li>
-								<% end -%>							
-							</ul>
+							<%= link_to image_tag('comlinks.png',size: '140x90'), root_path %>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div><!--/header-middle-->
-	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
+					<div class="menu col-md-10 col-sm-9">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -102,19 +82,23 @@
 								<li><%= link_to "Contact", contacts_path %></li>
 							</ul>
 						</div>
-					</div>
-					<div class="col-sm-3">
-							<%= form_tag(products_path, :method => "get", :class => 'search_box') do %>
-								<%= text_field_tag :search, params[:search], :placeholder => "search" %>
-								<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-								  <span class="glyphicon glyphicon-search"></span> 
-								<% end %>
-							<% end %>						
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<% if user_signed_in? || admin_signed_in? %>
+								<li><%= link_to '<i class="glyphicon glyphicon-user"></i>Account'.html_safe, root_path %> </li>
+								<li><%= link_to  '<i class ="glyphicon glyphicon-log-out"></i>logout'.html_safe, destroy_user_session_path, method: :delete %></li>
+								<% end -%>							
+							</ul>
 						</div>
+						<%= form_tag(products_path, :method => "get", :class => 'search_box pull-right') do %>
+							<%= text_field_tag :search, params[:search], :placeholder => "search" %>
+							<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+							  <span class="glyphicon glyphicon-search"></span> 
+							<% end %>
+						<% end %>	
 					</div>
 				</div>
-			</div>
-		</div><!--/header-bottom-->
+		</div><!--/header-middle-->
 	</header>
 	 <style>
         /* code for animated blinking cursor */
