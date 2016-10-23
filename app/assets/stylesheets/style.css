@@ -35,7 +35,7 @@ body a{
 /*--starts-logo--*/
 .logo {
     text-align: center;
-    padding: 25px 0 20px 0px;
+    padding: 5px 0 5px 0px;
     border-bottom: 1px solid #DEDEDE;
 }
 .logo a h1 {
@@ -363,7 +363,7 @@ span.simpleCart_total {
 	color: #fff;
 }
 .header-bottom {
-    padding: 18px 0px;
+    padding: 0px 0px;
 }
 /*--end-bottom-header--*/
 /*--banner-Part-starts-Here --*/
@@ -1887,7 +1887,7 @@ h3.ghj {
 }
 @media (max-width:1280px){
 .logo {
-    padding: 22px 0 17px 0px;
+    padding: 3px 0 3px 0px;
 }
 .single-para h2 {
     font-size: 2.1em;
