@@ -27,8 +27,8 @@
 			                                                        <li><a href="/"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
 			                                                    <% end -%>
 				                                                <% if admin_signed_in? %>
-					                                                <li><%= link_to 'Edit', edit_category_path(category) %></li>
-					                                                <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+					                                                <li><%= link_to 'Edit', edit_category_path(@category) %></li>
+					                                                <li><%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 				                                                <% end -%>
 		                                                    </ul>
 	                                                	</div>
