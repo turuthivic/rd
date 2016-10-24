@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   match '/contacts', to: 'contacts#new', via: 'get'
+  get 'products/:id' => 'products#show'
 resources "contacts", only: [:new, :create]
   resources :subcategories
   devise_for :admins
