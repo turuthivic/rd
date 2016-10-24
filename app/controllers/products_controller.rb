@@ -13,14 +13,14 @@ class ProductsController < ApplicationController
       @products = Product.all.order("created_at DESC")
     end
     # @subcategory = Subcategory.find_by id: params['subcategory.id']
-    @category = Category.where(@category_id)
+    @categories = Category.where(@category_id)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @prod = Product.where(@category_id)
-    @category = Category.where(@category_id)
+    @categories = Category.where(@category_id)
   end
 
   # GET /products/new

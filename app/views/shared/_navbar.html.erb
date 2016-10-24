@@ -74,13 +74,11 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><%= link_to "Home", root_path, class: "active" %></li>
-								<li><%= link_to "Laptops", Category.first %></li>
-								<li><%= link_to "Desktops", Category.second %></li>
-								<li><%= link_to "Accessories", Category.third %></li>
-								<li><%= link_to "CCTV", Category.fourth %></li>
-								<li><%= link_to "Contact", contacts_path %></li>
-							</ul>
+								<li><%= link_to "Home", root_path, class: "active" %></li>						
+							<% @categories.each do |c|%>
+							    <li><%= link_to "#{c.name}", c %></li>
+							<% end %>	
+						    </ul>							
 						</div>
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
