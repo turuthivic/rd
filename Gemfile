@@ -32,6 +32,13 @@ gem 'autoprefixer-rails'
 gem 'nprogress-rails'
 # using puma server
 gem 'puma'
+group :development do
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano3-puma', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
+end
 # calendar management of events
 # gem "simple_calendar"
 # mailform for contact 
