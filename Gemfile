@@ -32,6 +32,7 @@ gem 'autoprefixer-rails'
 gem 'nprogress-rails'
 # using puma server
 gem 'puma'
+gem 'figaro'
 group :development do
 gem 'capistrano'
 gem 'capistrano-rails'
