@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, 'rd'
-set :repo_url, 'turuthivic@bitbucket.org/turuthivic/the-real-application-to-look-at.git'
+set :repo_url, 'git@github.com:turuthivic/rd.git'
 
 # Default branch is :master
 set :branch, :master
