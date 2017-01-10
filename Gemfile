@@ -32,14 +32,14 @@ gem 'nprogress-rails'
 # using puma server
 gem 'puma'
 gem 'figaro'
-group :development do
-gem 'capistrano', "3.6.1"
-gem 'capistrano3-puma'
-gem 'capistrano-passenger'
-gem 'capistrano-rails', require: false
-gem 'capistrano-bundler', require: false
-gem 'capistrano-rvm'
-end
+# group :development do
+# gem 'capistrano', "3.6.1"
+# gem 'capistrano3-puma'
+# gem 'capistrano-passenger'
+# gem 'capistrano-rails', require: false
+# gem 'capistrano-bundler', require: false
+# gem 'capistrano-rvm'
+# end
 # calendar management of events
 # gem "simple_calendar"
 # mailform for contact 
@@ -47,7 +47,7 @@ gem "mail_form"
 # simpleform for forms
 gem "simple_form"
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'heroku-deflater', :group => :production
+# gem 'heroku-deflater', :group => :production
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
