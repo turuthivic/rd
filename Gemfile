@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
  ruby '2.1.5'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,8 +34,9 @@ gem 'nprogress-rails'
 gem 'puma'
 gem 'figaro'
 group :development do
-gem 'capistrano'
+gem 'capistrano', "3.6.1"
 gem 'capistrano3-puma'
+gem 'capistrano-passenger'
 gem 'capistrano-rails', require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano-rvm'
