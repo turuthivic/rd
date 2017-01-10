@@ -198,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mail_form
+  nokogiri (~> 1.7.0.1)
   nprogress-rails
   paperclip
   pg
