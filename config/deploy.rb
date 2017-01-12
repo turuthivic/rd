@@ -30,7 +30,9 @@ set :puma_init_active_record, true
 set :puma_preload_app, false
 
 
-
+ set :ssh_options , {
+    Config : false
+ }
 
 
 
