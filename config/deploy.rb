@@ -31,7 +31,7 @@ set :puma_preload_app, false
 
 
  set :ssh_options , {
-    Config : false
+    Config: false
  }
 
 
