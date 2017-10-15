@@ -1,2 +1,2 @@
-class Subcategory < ActiveRecord::Base
+class Subcategory < ApplicationRecord
 end

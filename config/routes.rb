@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   match '/contacts', to: 'contacts#new', via: 'get'
-  get 'products/:id' => 'products#show'
+  # get 'products/:id' => 'products#show'
 resources "contacts", only: [:new, :create]
   resources :subcategories
   devise_for :admins
@@ -11,7 +11,7 @@ resources "contacts", only: [:new, :create]
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'products#index'
+  get root 'products#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,11 +4,11 @@
             	<div class="col-sm-3">             
 	            	<%= render '/shared/sidebar' %>
 	            </div>
-                <div class="col-md-9 col-sm-12 col-xs-12 padding-right">
+                <div class="col-md-9 col-sm-12 col-xs-12">
                     <% if admin_signed_in? %>
-                        <h2><%= link_to 'New Category', new_category_path, class: "text-center"%></h2>
+                        <h2><%= link_to 'New Product', new_product_path, class: "text-center" %>
+                        <%= link_to 'New Category', new_category_path, class: "pull-right"%></h2>
                     <% end -%>
-                    <div class="features_items"><!--features_items-->
                         <h2 class="title text-center"><%= @category.name %></h2>                       
 								<p>
 								  <%= @category.description %>
@@ -17,7 +17,7 @@
 									<div class="col-md-4 col-sm-6 col-xs-12">
 	                                    <div class="product-image-wrapper">
 	                                        <div class="single-products">
-													<p><%= link_to image_tag(p.image.url, size: "300x200", class: "zoom-img"), product_path(p.id)%></p>
+													<p><%= link_to image_tag(p.image.url, size: "300x200", class: "img-responsive zoom-img"), product_path(p.id)%></p>
 													<div class="productinfo text-center">
 														<p><%= p.description%></p>
 														<p><%= p.price %></p>
@@ -37,8 +37,6 @@
                                         </div>
 									</div>
 								<% end -%>
-							</div>
-						</div>
 					</div>
 				</div>
 		</section>

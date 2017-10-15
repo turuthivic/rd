@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -32,15 +32,15 @@ gem 'autoprefixer-rails'
 gem 'nprogress-rails'
 # using puma server
 gem 'puma'
-# gem 'figaro'
-# group :development do
-# gem 'capistrano'
-# gem 'capistrano3-puma'
-# # gem 'capistrano-passenger'
-# gem 'capistrano-rails', require: false
-# gem 'capistrano-bundler', require: false
-# gem 'capistrano-rvm'
-# end
+gem 'figaro'
+group :development do
+gem 'capistrano'
+gem 'capistrano3-puma'
+# gem 'capistrano-passenger'
+gem 'capistrano-rails', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
+end
 # calendar management of events
 # gem "simple_calendar"
 # mailform for contact 

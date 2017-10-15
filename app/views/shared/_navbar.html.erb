@@ -56,7 +56,7 @@
 			</div>
 		</div><!--/header_top-->
 		<div class="header-middle"><!--header-middle-->
-			<div class="container">
+			<div class="middle-nav">
 				<div class="row">
 					<div class="col-md-2 col-sm-8">
 						<div class="logo pull-left">
@@ -75,8 +75,8 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><%= link_to "Home", root_path, class: "active" %></li>						
-							<% @categories.each do |c|%>
-							    <li><%= link_to "#{c.name}", c %></li>
+							<% @categorie.each do |c|%>
+							    <li><%= link_to c.name, c %></li>
 							<% end %>	
 						    </ul>							
 						</div>
@@ -88,12 +88,14 @@
 								<% end -%>							
 							</ul>
 						</div>
-						<%= form_tag(products_path, :method => "get", :class => 'search_box pull-right') do %>
-							<%= text_field_tag :search, params[:search], :placeholder => "search" %>
-							<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-							  <span class="glyphicon glyphicon-search"></span> 
-							<% end %>
-						<% end %>	
+						<div class="search-div">
+							<%= form_tag(products_path, :method => "get", :class => 'search_box pull-right') do %>
+								<%= text_field_tag :search, params[:search], :placeholder => "search" %>
+								<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+								  <span class="glyphicon glyphicon-search"></span> 
+								<% end %>
+							<% end %>	
+						</div>
 					</div>
 				</div>
 		</div><!--/header-middle-->

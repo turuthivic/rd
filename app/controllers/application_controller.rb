@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_categories
-  	@categories = Category.where(@category_id)
+  	@categorie = Category.where(@category_id)
   end
 end
